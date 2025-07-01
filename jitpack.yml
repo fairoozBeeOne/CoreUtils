@@ -1,3 +1,6 @@
-jdk: 17
+jdk:
+  - openjdk17
+
 install:
   - ./gradlew clean build
+  - ./gradlew :coreLibUtils:assembleRelease
