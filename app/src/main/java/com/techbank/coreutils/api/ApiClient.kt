@@ -1,4 +1,4 @@
-package com.techbank.coreutils.api
+package com.techbank.corelibutils.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

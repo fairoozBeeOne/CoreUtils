@@ -1,9 +1,9 @@
-package com.techbank.coreutils.api.sample
+package com.techbank.corelibutils.api.sample
 
 import androidx.lifecycle.LifecycleOwner
-import com.techbank.coreutils.api.ApiCaller
-import com.techbank.coreutils.api.ApiClient
-import com.techbank.coreutils.api.ApiResponse
+import com.techbank.corelibutils.api.ApiCaller
+import com.techbank.corelibutils.api.ApiClient
+import com.techbank.corelibutils.api.ApiResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

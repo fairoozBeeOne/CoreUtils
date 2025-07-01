@@ -1,4 +1,4 @@
-package com.techbank.coreutils.api
+package com.techbank.corelibutils.api
 
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.*
