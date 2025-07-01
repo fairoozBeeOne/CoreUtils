@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CoreUtils"
 include(":app")
-include(":coreLibUtils")
+//include(":coreLibUtils")

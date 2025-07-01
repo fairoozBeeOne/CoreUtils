@@ -1,20 +1,23 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.techbank.coreutils"
     compileSdk = 36
+    group = "com.github.fairoozp"
+    version = "1.0.0"
+
+    publishing {
+        singleVariant("release")
+    }
 
     defaultConfig {
-        applicationId = "com.techbank.coreutils"
         minSdk = 28
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
