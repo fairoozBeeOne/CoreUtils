@@ -7,8 +7,8 @@ plugins {
 android {
     namespace = "com.techbank.coreutils"
     compileSdk = 36
-    group = "com.github.fairoozp"
-    version = "1.0.0"
+    group = "com.github.fairoozBeeOne"
+    version = "2.4"
 
     publishing {
         singleVariant("release") {
@@ -48,7 +48,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.fairoozBeeOne"
                 artifactId = "CoreUtils"
-                version = "2.2"
+                version = "2.4"
             }
         }
     }
