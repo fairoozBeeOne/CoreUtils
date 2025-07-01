@@ -1,4 +1,4 @@
-package com.techbank.coreutils.api
+package com.techbank.corelibutils.api
 
 sealed class ApiResponse<out T : Any> {
     data class Success<out T : Any>(val data: T) : ApiResponse<T>()

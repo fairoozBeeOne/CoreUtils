@@ -1,4 +1,4 @@
-package com.techbank.coreutils.api.sample
+package com.techbank.corelibutils.api.sample
 
 import android.service.autofill.UserData
 import retrofit2.Response
