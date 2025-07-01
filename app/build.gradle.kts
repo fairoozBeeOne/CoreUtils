@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -10,7 +11,9 @@ android {
     version = "1.0.0"
 
     publishing {
-        singleVariant("release")
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 
     defaultConfig {
@@ -35,6 +38,19 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.fairoozBeeOne"
+                artifactId = "CoreUtils"
+                version = "2.2"
+            }
+        }
     }
 }
 
