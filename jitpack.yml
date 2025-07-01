@@ -3,3 +3,4 @@ jdk:
 
 install:
   - ./gradlew clean build
+  - ./gradlew :coreLibUtils:assembleRelease
