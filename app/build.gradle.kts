@@ -1,31 +1,25 @@
 plugins {
-    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("maven-publish")
 }
 
 android {
     namespace = "com.techbank.coreutils"
     compileSdk = 36
-    group = "com.github.fairoozBeeOne"
-    version = "2.4"
-
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
 
     defaultConfig {
+        applicationId = "com.techbank.coreutils"
         minSdk = 28
+        targetSdk = 36
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -41,19 +35,6 @@ android {
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fairoozBeeOne"
-                artifactId = "CoreUtils"
-                version = "2.4"
-            }
-        }
-    }
-}
-
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -61,10 +42,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.coil)
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.okhttp)
-    implementation(libs.logging.interceptor)
-    implementation(libs.timber)
 }

@@ -16,14 +16,30 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
-
+    signingConfigs {
+        create("release") {
+            storeFile = file(project.property("MyApp.signing").toString())
+            storePassword = project.property("MyApp.signing.password").toString()
+            keyAlias = project.property("MyApp.signing.alias").toString()
+            keyPassword = project.property("MyApp.signing.alias.password").toString()
+        }
+    }
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
+        }
+    }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
         }
     }
     compileOptions {
